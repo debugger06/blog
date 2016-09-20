@@ -32,3 +32,4 @@ Credits:
 		Misc. Sass functions (@HugoGiraudel)
 		Respond.js (j.mp/respondjs)
 		Skel (skel.io)
+## Editing the layout.
