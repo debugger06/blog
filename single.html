@@ -6,11 +6,17 @@
 -->
 <html>
 	<head>
-		<title>Single - Future Imperfect by HTML5 UP</title>
+		<title>Story Teller - Birkhoff Polytope</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+		</script>
+		<script type="text/javascript" async
+			src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+		</script>
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	</head>
@@ -21,14 +27,14 @@
 
 				<!-- Header -->
 					<header id="header">
-						<h1><a href="#">Future Imperfect</a></h1>
+						<h1><a href="#">Story Teller</a></h1>
 						<nav class="links">
 							<ul>
-								<li><a href="#">Lorem</a></li>
-								<li><a href="#">Ipsum</a></li>
-								<li><a href="#">Feugiat</a></li>
-								<li><a href="#">Tempus</a></li>
-								<li><a href="#">Adipiscing</a></li>
+								<li><a href="#">Machine Learning</a></li>
+								<li><a href="#">Data Science</a></li>
+								<li><a href="#">Big Data</a></li>
+								<li><a href="#">Mathematics</a></li>
+								<li><a href="#">Travel</a></li>
 							</ul>
 						</nav>
 						<nav class="main">
@@ -61,26 +67,26 @@
 								<ul class="links">
 									<li>
 										<a href="#">
-											<h3>Lorem ipsum</h3>
-											<p>Feugiat tempus veroeros dolor</p>
+											<h3>Machine Learning</h3>
+											<p>Discussion on Machine Learning</p>
 										</a>
 									</li>
 									<li>
 										<a href="#">
-											<h3>Dolor sit amet</h3>
-											<p>Sed vitae justo condimentum</p>
+											<h3>Data Science</h3>
+											<p>Posts on Data Science Experiemnts</p>
 										</a>
 									</li>
 									<li>
 										<a href="#">
-											<h3>Feugiat veroeros</h3>
-											<p>Phasellus sed ultricies mi congue</p>
+											<h3>Mathematics</h3>
+											<p>All posts about Algebra</p>
 										</a>
 									</li>
 									<li>
 										<a href="#">
-											<h3>Etiam sed consequat</h3>
-											<p>Porta lectus amet ultricies</p>
+											<h3>Travel</h3>
+											<p>My travelling experience</p>
 										</a>
 									</li>
 								</ul>
@@ -102,17 +108,276 @@
 							<article class="post">
 								<header>
 									<div class="title">
-										<h2><a href="#">Magna sed adipiscing</a></h2>
-										<p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>
+										<h2><a href="#">Birkhoff Polytope</a></h2>
+										<p>A polytope of doubly stochastic metrices.</p>
 									</div>
 									<div class="meta">
-										<time class="published" datetime="2015-11-01">November 1, 2015</time>
-										<a href="#" class="author"><span class="name">Jane Doe</span><img src="images/avatar.jpg" alt="" /></a>
+										<time class="published" datetime="2015-11-01">September 1, 2016</time>
+										<a href="#" class="author"><span class="name">Saifullah</span><img src="images/avatar.jpg" alt="" /></a>
 									</div>
 								</header>
 								<span class="image featured"><img src="images/pic01.jpg" alt="" /></span>
-								<p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-								<p>Nunc quis dui scelerisque, scelerisque urna ut, dapibus orci. Sed vitae condimentum lectus, ut imperdiet quam. Maecenas in justo ut nulla aliquam sodales vel at ligula. Sed blandit diam odio, sed fringilla lectus molestie sit amet. Praesent eu tortor viverra lorem mattis pulvinar feugiat in turpis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce ullamcorper tellus sit amet mattis dignissim. Phasellus ut metus ligula. Curabitur nec leo turpis. Ut gravida purus quis erat pretium, sed pellentesque massa elementum. Fusce vestibulum porta augue, at mattis justo. Integer sed sapien fringilla, dapibus risus id, faucibus ante. Pellentesque mattis nunc sit amet tortor pellentesque, non placerat neque viverra. </p>
+								<p style="text-align: justify;text-justify: inter-word;">
+									Birkhoff polytope can be understood as the polytope of all $n \times n$ doubly stochastic matrices. Nonnegative doubly stochastic matrices are connected to probability because each column or row can be understood as a discrete probability distribution. It is argued to be a very important  polytope as it appears surprisingly in many different branches of mathematics. It is a widely used mathematical object and its different properties are vastly analysed. There are still some open questions regarding geometric and combinatorial structure. This post focuses on this interesting mathematical phenomenon. It is structured as followed: part 2.1 provides mathematical basics which are required to understand some part of this post. Following this, the next section covers polytopes,  convex polytopes. In that part constituent elements and properties of convex polytope are described. Part 2.3 is completely dedicated to unwrap the Birkhoff polytope.</p>
+								<h3>Important Definitions</h3>
+								<p style="text-align: justify;text-justify: inter-word;">
+									This section will introduce some basic concepts and definitions.</p>
+								<h4>Doubly Stochastic Metrices</h4>
+								<p style="text-align: justify;text-justify: inter-word;">
+									A stochastic matrix is a matrix in which all elements are nonnegative and the rows sum to one. In addition to this, if all columns sum to one the matrix is called doubly stochastic. It can be defined mathematically as:<br>
+								An $n \times n$ matrix $P=(p_{i,j})$ is doubly stochastic if
+								$$
+
+								\begin{equation*}
+									\begin{aligned}
+										p_{i,j}\geqslant 0 & & \forall i,j=1,...,n
+									\end{aligned}
+								\end{equation*}
+								$$
+								and
+								$$
+								\begin{equation*}
+									\begin{aligned}
+										\sum_i p_{i,j}=1, & \quad \forall j=1,...,n\\
+										\sum_j p_{i,j}=1, & \quad \forall i=1,...,n
+									\end{aligned}
+								\end{equation*}
+								$$
+								Examples: The following matrices are doubly stochastic.
+								$$
+								\begin{bmatrix}
+    								0 & 1 & 0 \\
+    								1 & 0 & 0 \\
+    								0 & 0 & 1 \\
+  								\end{bmatrix}
+  								,
+    							\begin{bmatrix}
+     								1/6 & 5/6 & 0 & 0 \\
+     								0 & 0 & 1 & 0 \\
+     								0 & 1/6 & 0 & 5/6 \\
+     								5/6 & 0 & 0 & 1/6
+    							\end{bmatrix}
+  								,
+    							\begin{bmatrix}
+     								\frac{1}{2} & \frac{1}{2} \\
+     								\frac{1}{2} & \frac{1}{2}
+    							\end{bmatrix}
+								$$
+								</p>
+								<h4>Permutation Matrices</h4>
+								<p style="text-align: justify;text-justify: inter-word;">
+									When a matrix can be obtained by permuting the rows of an $n\times n$ identity matrix according to some permutation of the numbers $1$ to $n$ then this matrix is called a permutation matrix. Thus it is possible to obtain $n!$ different permutation matrices from an $n\times n$ matrix.<br>
+								The permutation matrices of order 3 are:
+								$$
+								\begin{bmatrix}
+    								1 & 0 & 0 \\
+    								0 & 1 & 0 \\
+    								0 & 0 & 1 \\
+  								\end{bmatrix}
+ 								,
+   								\begin{bmatrix}
+     								1 & 0 & 0 \\
+     								0 & 0 & 1 \\
+     								0 & 1 & 0 \\
+    							\end{bmatrix}
+  								,
+    							\begin{bmatrix}
+     								0 & 0 & 1 \\
+     								1 & 0 & 0 \\
+     								0 & 1 & 0 \\
+    							\end{bmatrix}
+    							,
+    							\begin{bmatrix}
+     								0 & 1 & 0 \\
+     								1 & 0 & 0 \\
+     								0 & 0 & 1 \\
+    							\end{bmatrix}
+    							,
+    							\begin{bmatrix}
+     								0 & 1 & 0 \\
+     								0 & 0 & 1 \\
+     								1 & 0 & 0 \\
+    							\end{bmatrix}
+    							,
+    							\begin{bmatrix}
+     								0 & 0 & 1 \\
+     								0 & 1 & 0 \\
+     								1 & 0 & 0 \\
+    							\end{bmatrix}
+								$$
+								</p>
+								<h3>Polytopes and Convex Polytopes</h3>
+								<p style="text-align: justify;text-justify: inter-word;">
+									In the simplest case, polytopes are geometrical objects with flat sides in any general number of dimensions. Coxeter in his book "Regular Polytopes"  has defined a polytope as a finite region of  $n$-dimensional space enclosed by a finite number of hyperplanes. In this sense a polytope can be defined as a bounded subset of Euclidean space that results as the intersection of finitely many half-spaces.<br>
+
+									One of the most frequent classes of polytopes are convex polytopes which are said to be of the simplest kind and form the basis for several different generalizations. A convex polytope can be identified as the convex hull of a finite set of points, or as a bounded intersection of a finite set of half-spaces. There is an argument  that convex polytopes should be unbounded. In the book "Convex polytopes", Grünbaum generalized the notion of convex polytope. Convex polytopes have been identified  as central objects in linear and quadratic programming. Convex polytopes are important in this thesis because the Birkhoff polytope  is a convex polytope.
+								</p>
+										<center><img src="images/birkhoff/1.png" align="middle" alt="" /></center>
+										<center>Fig: A $3$-dimensional convex polytope.</center><br>
+										
+								<h4>Formal Definition of Convex Polytopes</h4>
+								<p style="text-align: justify;text-justify: inter-word;">
+									A set $S$ in $\mathbb{R}^n$ is considered to be convex if the line segment connecting any two points in $S$ is completely contained in the set $S$. Mathematically, given any $x_1,x_2\in S$, the set of all points $\lambda  \cdot x_1+(1-\lambda )x_2\in S$ for $0\leq\lambda \leq1$. A convex polytope $\mathcal{P}$ or polytope in $n$-dimensional Euclidean space $\mathbb{R}^n$ is defined as the convex hull of $k$ points $x_1,x_2,\cdots,x_k$ in $\mathbb{R}^n$. This is the smallest convex set containing these points. Note that $n-$dimensional polytopes are frequently called $n-$polytope.
+								</p>
+								<h4>Algebraic Formulation of Polytopes</h4>
+								<p style="text-align: justify;text-justify: inter-word;">
+									A hyperplane divides space into two half-spaces. Half-spaces are convex sets and intersection of convex sets results in a convex set. Mathematically a closed half space is given by a linear inequality:
+								</p>
+								$$a_1x_1+a_2x_2+...+a_nx_n \leq b$$
+								<p style="text-align: justify;text-justify: inter-word;">
+									As the intersection of half-spaces defines a polytope, an $n$-dimensional polytope can be represented as the set of solutions to a system of linear inequalities:
+									$$
+										\begin{aligned}
+											a_{1,1}x_1+a_{1,2}x_2+\cdots +a_{1,n}x_n & \leq b_1\\
+											a_{2,1}x_1+a_{2,2}x_2+\cdots +a_{2,n}x_n & \leq b_2\\
+		 									& \vdots \\
+											a_{m,1}x_1+a_{m,2}x_2+\cdots +a_{m,n}x_n &\leq b_m
+										\end{aligned}
+									$$
+								</p>
+								<p>where $m$ is the number of half-spaces defining the polytope. This can be written compactly in the following matrix inequality form:</p>
+								$$
+								\begin{aligned}
+									Ax\leq b
+								\end{aligned}
+								$$
+								<p style="text-align: justify;text-justify: inter-word;">
+									Here, $A$ is an $m\times n$ matrix, $x$ is an $n\times 1$ column vector of variables and $b$ stands for an $m\times 1$ column vector of constants.<br>
+									In addition to the linear inequality, linear equalities may also present in this system.
+								</p>
+								<h4>Faces of Polytopes</h4>
+								<p style="text-align: justify;text-justify: inter-word;">
+									Assume $\mathcal{P}$ is a convex $n$-polytope in $\mathbb{R}^n$. Let $c$ be a real $n$-dimensional vector, then a linear inequality $c^\top x\leq d$ is called valid for $\mathcal{P}$ if $c^\top x\leq d$ holds for all points $x$ where $x\in \mathcal{P}$. A subset $F$ of $\mathcal{P}$ is called a face of $\mathcal{P}$ if it is represented as:
+								</p>
+								$$
+								\begin{aligned}
+									F=\mathcal{P}\cap \lbrace x:c^\top x=d \rbrace \quad \text{for some valid inequality }c^\top x\leq d.
+								\end{aligned}
+								$$
+								<p style="text-align: justify;text-justify: inter-word;">
+
+								According to this definition, both the empty set and the whole of $\mathcal{P}$ are considered faces. However, they are called improper faces. Any faces except these two are called proper faces. Faces can also be explained geometrically. This requires the concept of a supporting hyperplane. A hyperplane $h$ of $\mathbb{R}^n$ is supporting $\mathcal{P}$ if one of the two closed half-spaces of $h$ contains $\mathcal{P}$. A subset $F$ of $\mathcal{P}$ is called a face of $\mathcal{P}$ if it is either $\emptyset$,$\mathcal{P}$ itself, or the intersection of $\mathcal{P}$ with a supporting hyperplane.<br>
+								$0$-dimensional faces are called vertices and $1$-dimensional faces are called edges. On the other hand, faces of dimension $\mathrm{dim} (\mathcal{P})-2$ and $\mathrm{dim}(\mathcal{P})-1$ are respectively known as ridges and facets.
+								</p>
+
+								<h4>An Interesting Numerical Property of Polytopes</h4>
+								<p style="text-align: justify;text-justify: inter-word;">
+									Grünbaum and Shephard~\cite{Reference15} mention Euler's theorem as one of the developments which has driventhe modern theory of convex polytopes. It relates the number of vertices $V$ to the number of edges $E$ and facets $F$ of a $3$ dimensional polytope or $3$-polytope:
+								</p>
+
+								$$								
+								\begin{equation*}
+									\begin{aligned}
+										V-E+F=2
+									\end{aligned}
+								\end{equation*}
+								$$
+								It has been rephrased by Steinitz in the following theorem:
+								<center><img src="images/birkhoff/2.png" align="middle" alt="" /></center>
+								<p style="text-align: justify;text-justify: inter-word;">
+									This is only proved for convex $3$-polytopes. It is still an open question, if there are similar conditions which characterize the $f$-vectors of $4$-dimensional polytopes. In that case the $f$-vector has 4 components $(f_0(\mathcal{P}),f_1(\mathcal{P}),f_2(\mathcal{P}),f_3(\mathcal{P}))$.
+								</p>
+
+								<h3>The Ehrhart Polynomial</h3>
+								<p style="text-align: justify;text-justify: inter-word;">
+									Let $\Delta$ be an $n$-dimensional integral convex polytope in a lattice $M$. Assume $l_\Delta(k)$ is a function of the integer $k\in \mathbb{Z}^+$ that denotes the number of lattice points in $\Delta$. Then $l_\Delta(k)$ is a polynomial function of degree $n$ with rational coefficients:
+								</p>
+								$$
+								\begin{equation*}
+									l_\Delta(k) = a_nK^n+a_{n-1}k^{n-1}+\cdots +a_0
+								\end{equation*}
+								$$
+								This is called the Ehrhart polynomial. Its coefficients have significant geometrical importance:
+								<ul>
+									<li>$a_0 = 1$.</li>
+  									<li>$a_{n-1}$ is half the sum of the contents of the $(n-1)$-dimensional faces of $\Delta$</li>
+  									<li>$a_n$ is the content of the polytope $\Delta$</li>
+								</ul>
+								<h3>2.3 The Birkhoff Polytope</h3>
+								<p style="text-align: justify;text-justify: inter-word;">
+									The Birkhoff polytope is the polytope of doubly-stochastic matrices. It consists of those $n\times n$ matrices whose entries are non-negative real numbers and whose rows and columns sum to 1. The Birkhoff polytope has been widely used in machine learning, geometry, statistics, and optimization theory for its stochastic and convex property. Although a huge amount of research work has been done related to this mathematical object, several properties of its geometrical and combinatorial structure are still undiscovered. For example, it is still hard to find the number of faces of the polytope without knowing facets, vertices and edges explicitly, calculating the volume is still restricted to certain dimensions. The next section introduces the definition of the Birkhoff polytope derived from the Birkhoff-von Neumann theorem. This will lead to the section where methods and algorithms to calculate the volume are described.
+								</p>
+								<h4>Defining the Birkhoff polytope from the Birkhoff-von Neumann Theorem</h4>
+								<p style="text-align: justify;text-justify: inter-word;">
+									Recall from the definition section that a vector is said to be stochastic if it is non-negative and its components sum to 1. In addition to this, a matrix is doubly-stochastic if its each row and column vector is individually stochastic. On the other hand, a $n\times n$ matrix with exactly one $1$ in every row and column is called a permutation matrix.<br>
+
+									The area which is covered by a convex polytope in a $n$-dimensional space is formed by a set of points, some or all of which are vertices of the polytope. A point in the polytope can be represented as a weighted sum of vertices, where the weights range in the interval $[0,1]$. From this can be derived the fact that every convex combination of permutation matrices is doubly-stochastic. Garett Birkhoff in 1946 and John von Neumann in 1953 independently stated this as what is now called the Birkhoff-von Neumann theorem. The theorem is stated as follows:
+								</p>
+								<center><img src="images/birkhoff/3.png" align="middle" alt="" /></center>
+								<p style="text-align: justify;text-justify: inter-word;">
+									In other words, the vertices of the Birkhoff polytope are permutation matrices and hence every doubly-stochastic matrix is a convex combination of permutation matrices. The Birkhoff polytope $\mathcal{B}_n$ of an $n\times n$ doubly-stochastic matrix $a_{i,j}$ can be defined mathematically in the following form:
+								</p>
+								$$
+								\begin{equation}
+									\begin{aligned}
+									\mathcal{B}_n:=
+										\left\{ 
+										\begin{array}{c}
+    										\begin{bmatrix}
+        										a_{1,1} & \cdots & a_{1,n}\\
+        										\vdots  & \ddots & \vdots\\
+        										a_{n,1} & \cdots & a_{n,n}\\
+    										\end{bmatrix}\\
+										\end{array}
+									\in \mathbb{R}^{n\times n}
+									\quad \textrm{where} 
+									\begin{array}{c}
+										a_{i,j}\geq 0 \\
+										\sum_{i=1}^{n} a_{i,j} = 1,\\ \sum_{j=1}^{n} a_{i,j}=1.
+									\end{array}
+									\textit{ for all } 1\leqslant i,j\leqslant n
+									\right\}
+									\end{aligned}
+									\label{eqn:Birkhoff_definition}
+								\end{equation}
+								$$
+								<p style="text-align: justify;text-justify: inter-word;">
+									The values $a_{i,j}$ for $1\leq i,j\leq n-1$ determine a matrix $A\in \mathcal{B}_n$ completely, thus the polytope spans an $(n-1)\times (n-1)$ dimensional affine subspace of $\mathbb{R}^{n\times n}$. This subspace itself is determined by the rule that the sum of each row and column must be 1. Within this subspace the polytope is determined by $n^2$ linear inequalities. Every equality stands for one coordinate of the matrix. Consequently the polytope has exactly $n^2$ facets. In addition to this, the Birkhoff-von Neumann theorem states that it has $n!$ vertices.
+								</p>
+								<h3>Volume of the Birkhoff Polytope</h3>
+								<p style="text-align: justify;text-justify: inter-word;">
+									It was already mentioned earlier that despite a lot of research work on the Birkhoff polytope, still neither an efficient algorithm has been developed nor a generalized equation found to calculate the volume of the Birkhoff polytope. Igor Pak  identified calculating the volume of the Birkhoff polytope as a hard question even for smaller $n$. According to the reference, the exact values are known for $n\leqslant 8$, recently this has been extended to $n\leqslant 10$ . Pak shows that the volume of the Birkhoff polytope can be calculated as the volume of  a different polytope  $\mathbf{R}_n$ where $\mathbf{R}_n$ is defined as:
+								</p>
+								$$
+								\begin{equation*}
+									\begin{aligned}
+										\begin{cases}
+											b_{i,j}\geqslant 0,b_{i,j}\geqslant b_{i,j+1},b_{i,j}\geqslant b_{i+1,j},\\
+											\sum_{l=1}^{n-i}b_{i+l,l}=n-i \quad \quad \text{for all } 1\leqslant i,j\leq n \\
+											\sum_{l=1}^{n-j}b_{l,j+l}=n-j 
+										\end{cases}
+									\end{aligned}
+								\end{equation*}
+								$$
+								<p style="text-align: justify;text-justify: inter-word;">
+									$(b_{i,j})$ is an $n\times n$ non-negative real-valued matrix where the sums along its diagonal contents are equal to the length of the diagonal.This gives the following theorem:
+									<center><img src="images/birkhoff/3.png" align="middle" alt="" /></center>
+								</p>
+
+								<p style="text-align: justify;text-justify: inter-word;">
+									Matthias Beck and Dennis Pixton ~\cite{Reference10} presented another way to calculate the volume of the Birkhoff polytope. A complex analytical way to compute the Ehrhart polynomial of the Birkhoff polytope was developed based on that paper. The Ehrhart polynomial is a function which is useful to calculate the lattice points in the dilated polytope. The leading term of the Ehrhart polynomial gives the volume of the polytope. This method was implemented as a computer program to compute the Ehrhart polynomial of the $9$-th order to calculate the volume of $\mathcal{B}_{10}$. The computed volume is given by the following fraction:
+								</p>
+								$$
+								\begin{equation*}
+									\begin{aligned}
+										\frac{727291284016786420677508457990121862548823260052557333386607889}{828160860106766855125676318796872729344622463533089422677980721388055739956270293750883504892820848640000000}
+									\end{aligned}
+								\end{equation*}
+								$$
+								<p style="text-align: justify;text-justify: inter-word;">
+									The computation was made on 50 Linux workstations, processing time can be considered 17 years running time for a 1GHz processor. This computational issue limits the use of this method for higher order polytopes.
+
+									E. Rodney Canfield and Brendan D. McKay determined a method to calculate the asymptotic volume of non-negative integer matrices $\mathcal{I}_{m,n}$ in a way that when $n$ starts growing and with $m=n$, the ratio $m/n$ does not change rapidly. This in turn gives an asymptotic formula to calculate the volume of $\mathcal{B}_n$
+
+									For integers $m,n\geqslant 1$, they consider $\mathcal{I}_{m,n}$ as a transportation polytope which consists of $m\times n$ non-negative real-valued matrices. Each row of the matrix sums to $1$ and its columns sum to $m/n$. The Birkhoff polytope $\mathcal{B}_n$ is considered a special case of this kind. The volume of $\mathcal{B}_n$ is given by the following theorem:
+									<center><img src="images/birkhoff/5.png" align="middle" alt="" /></center>
+								</p>
+								<p>
+									So far, the exact value of $\mathcal{B}_n$ has been computed up to $n=10$. Following Table shows the ratio of the approximate value for $\textrm{vol}(\mathcal{B}_n)$ according to Theorem \ref{thrm:rodney} and the actual value. A comparison table has been shown to compare the exact value to the approximate volume calculated using the above theorem.
+									<center><img src="images/birkhoff/6.png" align="middle" alt="" /></center>
+									<center>Accuracy: Theorem for the volume of $\mathcal{B}_n$</center>
+								</p>
+								<p>It suggests that the error rate decreases at the rate of $\mathcal{O}(n^{-1})$.</p>
 								<footer>
 									<ul class="stats">
 										<li><a href="#">General</a></li>
@@ -133,7 +398,7 @@
 							<li><a href="#" class="fa-rss"><span class="label">RSS</span></a></li>
 							<li><a href="#" class="fa-envelope"><span class="label">Email</span></a></li>
 						</ul>
-						<p class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>. Images: <a href="http://unsplash.com">Unsplash</a>.</p>
+						<p class="copyright">&copy;  <a href="https://debugger06.github.io/blog/">Mohammad Saifullah</a>.</p>
 					</section>
 
 			</div>
