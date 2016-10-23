@@ -15,7 +15,7 @@
 			MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
 		</script>
 		<script type="text/javascript" async
-			src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+			src="assets/js/MathJax.js?config=TeX-AMS_CHTML">
 		</script>
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
@@ -117,7 +117,78 @@
 									</div>
 								</header>
 								<span class="image featured"><img src="images/pic01.jpg" alt="" /></span>
-								<p>K-means is one of the most simpliefied yet powerful unsupervised clustering algorithm. It is claimed that, k-means does not work in some field of AI, Game AI or data analysis. Some of them conclude make early conclusion with the claim that, Machine learning is a bad idea in game industry. The purpose of the post is to establish the fact that k-means clustering may not perform well in some situation, but it is not a valid idea to disregard its power in data analysis context with considering some other facts. This post concentrates on identifying its limitation(better to say properties) rather than spending more time on discovering the steps of the algorithm. As it aims to cover several concepts, this post is divided into two part. In the first part, the discussion will be limited to show the typical setup of K-means algorithm. At the end of the part two, reader will get some crucial insights which are necesarry to understand why inspite of its popularity as baseline clustering algorithm, may indeed not work as intended in some situation.</p>
+								<p style="text-align: justify;text-justify: inter-word;">K-means is one of the most simpliefied yet powerful unsupervised clustering algorithm. It is claimed that, k-means does not work in some field of AI, Game AI or data analysis. Some of them conclude make early conclusion with the claim that, Machine learning is a bad idea in game industry. The purpose of the post is to establish the fact that k-means clustering may not perform well in some situation, but it is not a valid idea to disregard its power in data analysis context with considering some other facts. This post concentrates on identifying its limitation(better to say properties) rather than spending more time on discovering the steps of the algorithm. As it aims to cover several concepts, this post is divided into two part. In the first part, the discussion will be limited to show the typical setup of K-means algorithm. At the end of the part two, reader will get some crucial insights which are necesarry to understand why inspite of its popularity as baseline clustering algorithm, may indeed not work as intended in some situation. <br> 
+
+								Before I go into next section, I would like to thank <a href="https://www.researchgate.net/profile/Christian_Bauckhage">Prof Dr. Christian Bauckhage</a> who organises courses on Pattern recognition and Game AI. Attending these courses has created my desire to learn about machine learning. In fact, this post is motivated by one of lectures.</p>
+
+								<h3>An Example where K-means Apears to Under Perform</h3>
+								<p style="text-align: justify;text-justify: inter-word;">
+									Before we dive into the technical details of K-means, let us start with an example where we apply k-means and as expected fails to show good result. In this example, a way point graph will be clustered. A waypoint graph is a(directed) labelled graph that encodes the topology or geometry of a game environment. This graph was captured from an opensource game environment and when plotted this graph using python mathplotlib the following output is found:
+								</p>
+								<center><img src="images/k-means-1/1.png" align="middle" alt="" /></center>
+								<center>Fig: A waypoint graph plotted using python matplotlib</center>
+								<p style="text-align: justify;text-justify: inter-word;">
+									It is seen from the graph that, this is a graph where 4 blocks are seperated by boundaries and at the same time they are connected through path. If think of clustering this game environment, we would consider to group it into 4 clusters. Python scikit-learn has well proven implementation of K-means clustering which we have used and plottted for visualisation. The following figure represents our outcome:
+								</p>
+								<center><img src="images/k-means-1/2.png" align="middle" alt="" /></center>
+								<center>Fig: The way-point graph clustered into 4 cluster, the different picture shows result for different initialization</center>
+								<p style="text-align: justify;text-justify: inter-word;">
+									It is clearly visible that, the clustering missed the geographical structure and resulted frustrating result. Many of us may conclude early that K-means fails and it is not a handful algorithm at all. This motivates to dive into deeper of this algorithm. If some one is interested about the implementation of this algorithm, there are thousands of useful tutorials and resources available at researchgate, stackoverflow where the steaps of K-means are illstrated in a goodway. Here we will stick to its properties only.
+								</p>
+								<h3>General Setup of K-means Algorithm</h3>
+								<p>
+									When we talk about clustering, in very general we are given a set $X={x_1,x_2,\cdots,x_n}\in \mathbb{R}^n$ i.e $n$ number of vectors $x_i\in \mathbb{R}^n$ which are identified as data points. This is very general setting that we are given a vectorial dataset and we want to do some analysis. to this data. In particular our goal is to cluster this data i.e group the data into groups which have similar features. This is interesting to say that we are interested in detecting internal substructure or latent structures or regularities in a arbitary set of vectors. Why we would do that? If we are able to detect such substructures, that might help us to compress the information given by the whole set to a smaller representation/footprint. Now a question is how to parameterise charactarise the structure and how to derive those parameters? Different clustering algorithm has different parameterization technique and at the end it is the notion of the substructure. The answer of this question from the K-means perspective can be expressed as:
+								</p>
+									
+								<ul>
+									<li> Substructures: subset/cluster $(C_i\in X)$</li>
+									<li>Requirements:</li>
+										<ul>
+											<li>Clusters should be disjoint that is $C_i\cap C_j=\emptyset \quad$  $(\forall i,j)$</li>
+											<li>$\bigcup_{i} C_{i}=X$ Union of all cluster is the dataset</li>
+											<li>Data assigned to $C_i$ should be "SIMILAR" although there is not specific definition to "SIMILAR"</li>
+										</ul>
+								</ul>
+								<h4>What does it mean to be two data point similar?</h4>
+								<p>
+									Different clustering algorithm has different answers to this question and it is the notion of similarity. At the end the answer for K-means algorithm is rather simple. To understand that let us represent any cluster $C_i$ by means of the centroid vector $\mu_i\in \mathbb{R}^n$. If we have the notion of the centroid vector of a cluster it is possible to define similarity mathematically. Consequently if we can say the distance between some data vector $x_j$ to a centroid vextor $\mu_i$ is less than the distance between any other centroid vectors then we can say that $x_j$ is similar to cluster centroid $\mu_j$.
+								</p>
+								$$
+								\parallel x_j-\mu_i \parallel < \parallel x_j -\mu_l \parallel \quad \forany j \notequal i \quad x_j\in C_i
+								$$
+								<p>
+									We are in process of defining typical setup of K-means clustering. So far we have claimed that if we are given a set of data points, where  we can compute their centroid vectors for all clusters and data point $x_j$ is close to centroid $\mu_i$ of a cluster $C_i$ than any centroid $\mu_l$ of any cluster $C_l$ then data point $x_j$ should be assigned to cluster $C_i$. This is what we can compute mathematically. Consequently if we represent similarity as distance, then the problem of K-means clustering becomes finding suitable centroid calculated from data. We can express this mathematically in a single objective function by the following minimization formula:
+								</p>
+								$$
+								minimization formula
+								$$
+
+								Note that $K$ is the number of cluster which implies into how many clusters we want to group our data set. We introduce a new indicator variable $Z_ij$
+								$$
+								some equation
+								$$
+								<p>
+									In practical this is a matrix of dimension $k\times n$ where $i,j$-th entry indicates wheather data point $x_j$ is in cluster $C_i$. This helps to identify easily which data belongs to which cluster. 
+								</p>
+								Using this variable, the objective function turns into the following modified form:
+								$$
+								some equation
+								$$
+								<p>
+								Recent study suggests these kind of minimization of objective function problems can be identified as NP-hard problem. Many of the problems are more difficult in the sense that even if the embading space of the data are 2-dimensional vectors and we want to find 2 subsets that minimizes criteria i.e we look for 2 set calls $\mu_1,\mu_2$, even for this simple setting it may not really possible to find optimized solution. This is because this objective function may have many local minima. Hence if we come with a objective function and it actually does not gurantee best possible solution. After all these description, the steps of K-means clustering algorithm can be summerized in the following form.
+								</p>
+
+								$$
+								K-means algorithm
+								$$
+
+								Before moving to part 2 I feel it is important to mention some technical facts about this algorithm:
+								<ul>
+									<li>The algorithm provely converges</li>
+									<li>This algorithm does not gurantee to find global optimum</li>
+									<li>Consequently, it is better to execute this algorithm several times</li>
+									<li>notion of random initialization is dangerous. There are many sophisticated approaches to iniliazed which are suggested to follow</li>
+								</ul>  
 								
 								<footer>
 									<ul class="stats">
